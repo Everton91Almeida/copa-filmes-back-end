@@ -28,6 +28,7 @@ namespace CopaFilmes.Application.AutoMapper
                     type.Namespace != null &&
                     type.Namespace.Equals(typeof(EntityBase).Namespace) &&
                     type.IsClass &&
-                    !type.Name.Contains("Base"));
+                    !type.Name.Contains("Base") &&
+                    !type.Name.Contains("<"));
     }
 }
