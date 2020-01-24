@@ -6,6 +6,6 @@ namespace CopaFilmes.Domain.Configuration
     {
         public string AddressBase { get; set; }
 
-        public Uri GetUri() => new Uri(AddressBase);
+        public Uri GetUri() => new Uri(AddressBase ?? "http://copafilmes.azurewebsites.net");
     }
 }

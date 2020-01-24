@@ -20,6 +20,5 @@ namespace CopaFilmes.Application.Service
 
             return Mapper.Map<IEnumerable<FilmeModel>>(eliminatoryStageWinners);
         }
-
     }
 }
