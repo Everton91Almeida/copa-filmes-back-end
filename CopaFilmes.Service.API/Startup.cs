@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CopaFilmes.Application.AutoMapper;
 using CopaFilmes.Domain.Configuration;
 using CopaFilmes.Infrastructure.CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace CopaFilmes.Service.API
@@ -26,12 +19,19 @@ namespace CopaFilmes.Service.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
+
             services.AddControllers();
 
             var apiConfiguration = new ApiConfiguration();
             new ConfigureFromConfigurationOptions<ApiConfiguration>(Configuration.GetSection("ApiConfiguration")).Configure(apiConfiguration);
             services.AddSingleton(apiConfiguration);
-         
 
             services.RegisterServices();
             services.AddAutoMapperSetup();
@@ -43,17 +43,10 @@ namespace CopaFilmes.Service.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }
