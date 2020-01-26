@@ -6,7 +6,6 @@
 - AutoMapper
 - Asp.Net Core WebAPI
 - .NET Core Native DI
-
 ### Testes
 - xUnit
 - MOQ
@@ -14,9 +13,9 @@
 
 ## Executandando aplicação localmente
 
-Necessita do .Net Core 3.1
+[.Net Core 3.1] (https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
-`CopaFilmes\copa-filmes-back-end\CopaFilmes.Service.API`
+`cd CopaFilmes\copa-filmes-back-end\CopaFilmes.Service.API`
 
 `dotnet run`
 
