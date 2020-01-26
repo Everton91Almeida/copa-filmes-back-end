@@ -13,7 +13,7 @@
 
 ## Executandando aplicação localmente
 
-[.Net Core 3.1] (https://dotnet.microsoft.com/download/dotnet-core/3.1)
+[.Net Core 3.1]: https://dotnet.microsoft.com/download/dotnet-core/3.1
 
 `cd CopaFilmes\copa-filmes-back-end\CopaFilmes.Service.API`
 
