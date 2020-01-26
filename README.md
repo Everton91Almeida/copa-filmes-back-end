@@ -13,6 +13,11 @@
 - Bogus
 
 ## Executandando aplicação localmente
+
+Necessita do .Net Core 3.1
+
 `CopaFilmes\copa-filmes-back-end\CopaFilmes.Service.API`
+
 `dotnet run`
+
 O back end por padrão executa nas portas http 5000 e https 5001
