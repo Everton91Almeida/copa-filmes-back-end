@@ -27,9 +27,10 @@ namespace CopaFilmes.Domain.Entity
             Nota > filme.Nota ? this : filme;
 
         private Filme GetWinnerByAlphabetical(Filme filme) =>
-           new[] { this, filme }.OrderBy(f => f.Titulo)
-           .FirstOrDefault();
+            new[] { this, filme }.OrderBy(f => f.Titulo)
+            .FirstOrDefault();
 
-        public override string ToString() => $"{GetType().Name} [Título={Titulo}]";
+        public override string ToString() =>
+            $"{GetType().Name} [Título={Titulo}]";
     }
 }

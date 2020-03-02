@@ -2,7 +2,6 @@
 using CopaFilmes.Application.Model;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CopaFilmes.Service.API.Controllers
 {
